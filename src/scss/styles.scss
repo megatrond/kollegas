@@ -1,3 +1,83 @@
-body {
-    background: red;
+@import "../../node_modules/foundation-sites/scss/foundation";
+@include foundation-global-styles;
+@include foundation-typography;
+@import "fonts";
+.icon {
+    font-family: "kollegas";
+    font-style: normal;
+    font-weight: normal;
+    font-size: rem-calc(150);
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+#female {
+    background: #ee88cd;
+    height: 50%;
+    position: relative;
+    .icon {
+        &:before {
+            color: #E3099B;
+            content: '\e801';
+        }
+    }
+    .salary {
+        color: #e3099b;
+    }
+}
+#male {
+    background: #87F1FF;
+    height: 50%;
+    position: relative;
+    .icon {
+        &:before {
+            color: #0086a3;
+            content: '\e800';
+        }
+    }
+    .salary {
+        color: #0086a3;
+    }
+}
+.salary {
+    color: white;
+    font-size: rem-calc(60);
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 100;
+}
+
+#about {
+    position: fixed;
+    top: rem-calc(20);
+    right: rem-calc(20);
+    width: 300px;
+    height: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding: rem-calc(20);
+    color: white;
+    p {
+        margin: 0;
+    }
 }
