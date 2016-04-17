@@ -158,7 +158,11 @@ gulp.task('copy:release', ['clean:release'], function() {
         .pipe(gulp.dest('dist'));
 });
 gulp.task('copy:fonts:release', ['clean:release'], function() {
-    gulp.src('./src/fonts/**/*', {base: './src'})
+    return gulp.src('./src/fonts/**/*', {base: './src'})
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('copy:img:release', ['clean:release'], function() {
+    return gulp.src('./src/img/**/*', {base: './src'})
         .pipe(gulp.dest('dist'));
 });
 // build javascript
@@ -225,6 +229,7 @@ gulp.task('build', [
     'clean:release',
     'copy:release',
     'copy:fonts:release',
+    'copy:img:release',
     'js:release',
     'scss:release',
     'revision:refchange',
