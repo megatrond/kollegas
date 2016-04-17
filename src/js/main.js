@@ -55,3 +55,16 @@ class Salaries {
 }
 
 new Salaries();
+
+const about = document.getElementById('about');
+
+const aboutButton = about.querySelectorAll('.question')[0];
+const closeButton = about.querySelectorAll('.close')[0];
+
+aboutButton.addEventListener('click', (event) => {
+    about.setAttribute('class', 'open');
+});
+
+closeButton.addEventListener('click', (event) => {
+    about.removeAttribute('class');
+});
