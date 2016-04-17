@@ -154,7 +154,11 @@ gulp.task('clean:release', function(cb) {
 });
 // copy files to prepare for relase
 gulp.task('copy:release', ['clean:release'], function() {
-    return gulp.src('html/*.html', {base: './html', dot: true})
+    return gulp.src('src/html/*.html', {base: './src/html', dot: true})
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('copy:fonts:release', ['clean:release'], function() {
+    gulp.src('./src/fonts/**/*', {base: './src'})
         .pipe(gulp.dest('dist'));
 });
 // build javascript
@@ -220,6 +224,7 @@ gulp.task('default', ['js', 'serve']);
 gulp.task('build', [
     'clean:release',
     'copy:release',
+    'copy:fonts:release',
     'js:release',
     'scss:release',
     'revision:refchange',
